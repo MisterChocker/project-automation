@@ -18,8 +18,8 @@ func main() {
 	// https://help.github.com/en/articles/virtual-environments-for-github-actions#default-environment-variables
 	eventName := os.Getenv("GITHUB_EVENT_NAME")
 	infoLog("Event name: %s\n", eventName)
-	if !(eventName == "issues" || eventName == "pull_request") {
-		infoLog("This GitHub event is neither issues nor pull_requests. Stop executing this action.")
+	if !(eventName == "issues" || eventName == "pull_request" || eventName == "pull_request_target") {
+		infoLog("This GitHub event is neither issues nor pull_requests or pull_request_target. Stop executing this action.")
 		infoLog("Please add 'if github.event_name' to the workflow yaml by following https://github.com/takanabe/github-actions-automate-projects/blob/master/README.md ")
 		os.Exit(0)
 	}
@@ -247,7 +247,7 @@ func addToProject(ctx context.Context, client *github.Client, eventID, columnID 
 	if eventName == "issues" {
 		opt.ContentID = eventID
 		opt.ContentType = "Issue"
-	} else if eventName == "pull_request" {
+	} else if (eventName == "pull_request" || eventName == "pull_request_target") {
 		opt.ContentID = eventID
 		opt.ContentType = "PullRequest"
 	}

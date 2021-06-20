@@ -98,13 +98,9 @@ You can easily detect [event contexts](https://help.github.com/en/articles/conte
 
 ### Build Docker image and update DockerHub
 
-Change `IMAGE_NAME`, `DOCKER_REPO` and `TAG_NAME` in `Makefile` based on your DockerHub settings.
-
-```bash
-make
-```
-
-Except for `sandbox` tag, [`takanabe/github-actions-automate-projects`](https://hub.docker.com/r/takanabe/github-actions-automate-projects/tags) lists production ready Docker images matching [GitHub release tag](https://github.com/takanabe/github-actions-automate-projects/releases).
+`docker build --no-cache  -f Dockerfile.build . -t github-actions-automate-projects:sandbox`
+`docker image tag github-actions-automate-projects:sandbox misterchocker/project-automation:sandbox`
+`docker push misterchocker/project-automation:sandbox`
 
 ## License
 

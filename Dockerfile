@@ -1,4 +1,4 @@
-FROM takanabe/github-actions-automate-projects:latest
+FROM MisterChocker/project-automation
 
 LABEL "com.github.actions.name"="Automate projects"
 LABEL "com.github.actions.description"="GitHub Actions adding GitHub Issues & Pull requests to the specified GitHub Project column automatically ♻️"

@@ -251,6 +251,8 @@ func addToProject(ctx context.Context, client *github.Client, eventID, columnID 
 		opt.ContentID = eventID
 		opt.ContentType = "PullRequest"
 	}
+	
+	infoLog("eventName %d, contentID %d, opt.contentid %d", eventName, eventID, opt.ContentID)
 
 	card, res, err := client.Projects.CreateProjectCard(ctx, columnID, opt)
 

@@ -256,7 +256,6 @@ func addToProject(ctx context.Context, client *github.Client, eventID, columnID 
 		opt.ContentType = "PullRequest"
 	} else if eventName == "pull_request_target" {
 		debugLog("type: pull_request_target")
-		opt.content_id = eventID
 		opt.ContentID = eventID
 		opt.ContentType = "PullRequest"
 	} else {

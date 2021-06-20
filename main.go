@@ -50,7 +50,7 @@ func main() {
 		errCheck(err)
 		projectCards, err = getProjectCardsFromIssue(ctx, client, payload.Issue, parentResource, parentName)
 		errCheck(err)
-	} else if eventName == "pull_request" {
+	} else if (eventName == "pull_request" || eventName == "pull_request_target") {
 		payload := pullRequestEventPayload()
 		eventID, err = extractPullRequestID(payload)
 		errCheck(err)

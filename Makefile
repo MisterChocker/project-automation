@@ -1,5 +1,5 @@
 IMAGE_NAME=github-actions-automate-projects
-DOCKER_REPO=takanabe/github-actions-automate-projects
+DOCKER_REPO=MisterChocker/project-automation
 TAG_NAME=sandbox
 
 #

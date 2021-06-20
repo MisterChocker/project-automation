@@ -247,19 +247,11 @@ func addToProject(ctx context.Context, client *github.Client, eventID, columnID 
 	opt := &github.ProjectCardOptions{}
 
 	if eventName == "issues" {
-		debugLog("type: issues")
 		opt.ContentID = eventID
 		opt.ContentType = "Issue"
-	} else if eventName == "pull_request" {
-		debugLog("type: pull_request")
+	} else if (eventName == "pull_request" || eventName == "pull_request_target") {
 		opt.ContentID = eventID
 		opt.ContentType = "PullRequest"
-	} else if eventName == "pull_request_target" {
-		debugLog("type: pull_request_target")
-		opt.ContentID = eventID
-		opt.ContentType = "PullRequest"
-	} else {
-		debugLog("found no type")
 	}
 	
 	debugLog("opt.contentid: %d", opt.ContentID)

@@ -1,4 +1,4 @@
-FROM MisterChocker/project-automation
+FROM MisterChocker/project-automation:latest
 
 LABEL "com.github.actions.name"="Automate projects"
 LABEL "com.github.actions.description"="GitHub Actions adding GitHub Issues & Pull requests to the specified GitHub Project column automatically ♻️"

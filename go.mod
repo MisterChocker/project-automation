@@ -1,4 +1,4 @@
-module github.com/misterchocker/project-automation
+module github.com/MisterChocker/project-automation
 
 require (
 	github.com/google/go-github/v25 v25.0.4
